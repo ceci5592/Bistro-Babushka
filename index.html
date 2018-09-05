@@ -20,9 +20,7 @@
 
         footer {
             background-color: #FA9309;
-            display: grid;
-            grid-template-rows: 1fr;
-            grid-template-columns: 1fr 1fr;
+            margin-top: 30px;
         }
 
         body {
@@ -60,6 +58,7 @@
 
         h4 {
             text-transform: uppercase;
+            font-weight: bold;
         }
 
         p .pris {
@@ -86,6 +85,20 @@
             color: white;
         }
 
+        .grid {
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        .item-a {
+            grid-column-start: 2;
+        }
+
+        .item-b {
+            grid-column-start: 3;
+        }
+
         .retContainer {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -97,11 +110,22 @@
             }
         }
 
-        /*@media only screen and (max-width: 1229px) {
-            .footer {
+        @media only screen and (max-width: 1229px) {
+            .grid {
                 grid-template-rows: 1fr 1fr;
+                grid-template-columns: 1fr;
             }
-        }*/
+
+            .item-a {
+                grid-row-start: 1;
+                grid-column-start: 1;
+            }
+
+            .item-b {
+                grid-row-start: 2;
+                grid-column-start: 1;
+            }
+        }
 
         @media only screen and (max-width: 830px) {
             .ret img {
@@ -202,14 +226,18 @@
     </script>
 
     <footer>
-        <h4>Adresse:</h4>
-        <p>Grønnegade 97<br>
-            1234 København K</p>
-
-        <h4>Åbningstider:</h4>
-        <p>Mandag - fredag: 10:30-22:00<br>
-            Lørdag: 12:00-23:00</p>
-
+        <div class="grid">
+            <div class="item item-a">
+                <h4>Adresse:</h4>
+                <p>Grønnegade 97<br>
+                    1234 København K</p>
+            </div>
+            <div class="item item-b">
+                <h4>Åbningstider:</h4>
+                <p>Mandag - fredag: 10:30-22:00<br>
+                    Lørdag: 12:00-23:00</p>
+            </div>
+        </div>
     </footer>
 
 </body>
